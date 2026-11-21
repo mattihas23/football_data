@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: raw_matches
+    tables:
+      - name: pl_matches
+        columns:
+          - name: referees
+            data_type: array
+          - name: odds
+            data_type: struct<`msg` string>
+          - name: score
+            data_type: struct<`penalties` struct<`away` int64, `home` int64>, `extratime` struct<`away` int64, `home` int64>, `halftime` struct<`away` int64, `home` int64>, `winner` string, `regulartime` struct<`away` int64, `home` int64>, `fulltime` struct<`away` int64, `home` int64>, `duration` string>
+          - name: awayteam
+            data_type: struct<`crest` string, `tla` string, `shortname` string, `name` string, `id` int64>
+          - name: hometeam
+            data_type: struct<`crest` string, `tla` string, `shortname` string, `name` string, `id` int64>
+          - name: stage
+            data_type: string
+          - name: lastupdated
+            data_type: timestamp
+          - name: group
+            data_type: string
+          - name: matchday
+            data_type: int64
+          - name: utcdate
+            data_type: timestamp
+          - name: competition
+            data_type: struct<`type` string, `emblem` string, `code` string, `name` string, `id` int64>
+          - name: id
+            data_type: int64
+          - name: status
+            data_type: string
+          - name: season
+            data_type: struct<`currentmatchday` int64, `winner` struct<`lastupdated` timestamp, `founded` int64, `address` string, `crest` string, `tla` string, `venue` string, `clubcolors` string, `shortname` string, `name` string, `website` string, `id` int64>, `startdate` date, `enddate` date, `id` int64>
+          - name: area
+            data_type: struct<`flag` string, `code` string, `name` string, `id` int64>
